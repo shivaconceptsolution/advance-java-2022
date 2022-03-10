@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>Are you sure to delete record?</h3>
 <%
 
 
@@ -18,11 +19,12 @@ ResultSet res = st.executeQuery("select * from student where rno='"+request.getP
 if(res.next())
 {
 %>
-<form action="UpdateSer" method="post">
+<form action="DeleteSer" method="post">
+<input type="hidden" name="txtrno" value="<%= res.getString("rno") %>" /> 
 <table>
-<tr><td>RNO</td><td><input type="text" name="txtrno" value="<%= res.getString(1) %>" readonly="" /> </td></tr>
-<tr><td>NAME</td><td><input type="text" name="txtsname" value="<%= res.getString(2) %>" /> </td></tr>
-<tr><td></td><td><input type="submit" name="btnsubmit" value="update" /></td></tr>
+<tr><td>RNO</td><td><%= res.getString("rno") %> </td></tr>
+<tr><td>NAME</td><td><%= res.getString("sname") %> </td></tr>
+<tr><td></td><td><input type="submit" name="btnsubmit" value="Delete" /></td></tr>
 
 </table>
 </form>
