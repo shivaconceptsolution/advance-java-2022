@@ -7,19 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="SISer" method="post">
-<input type="text" name="txtp" placeholder="Enter P" /> <br><br>
-<input type="text" name="txtr" placeholder="Enter R" /><br><br>
-<input type="text" name="txtt" placeholder="Enter R" /><br><br>
-<input type="submit" name="btnsubmit" value="Click" />
-</form>
-<%
-if(request.getParameter("q")!=null)
-{
-	out.write(request.getParameter("q"));
-}
-
-
-%>
+<form action="AdminLoginSer" method="post">
+            <p><input type="text" name="txtuser" placeholder="Enter username" /></p>
+            <p><input type="password" name="txtpass" placeholder="Enter password" /></p>
+            <p><input type="submit" name="btnsubmit" value="Login" /> </p>
+        </form>
+        
+ <%
+ if(request.getParameter("error")!=null)
+ {
+	 out.print(request.getParameter("error"));
+ }
+ 
+ 
+ 
+ %>       
 </body>
 </html>
